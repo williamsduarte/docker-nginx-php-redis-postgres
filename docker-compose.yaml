@@ -55,7 +55,7 @@ services:
     container_name: ${NAME_APP_WEB}
     ports:
       - "8000:80"
-      - "3000:443"
+      - "4000:443"
     restart: always
     depends_on:
       - db
