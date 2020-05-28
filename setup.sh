@@ -1,7 +1,4 @@
 #!/bin/bash
-#Update
-apt-get update
-sleep 5
 # Change access rights for the Laravel folders
 # in order to make Laravel able to access
 # cache and logs folder.
@@ -40,7 +37,12 @@ php artisan key:generate
 php artisan migrate:fresh --seed
 sleep 5
 
-apt-get update
 apt-get install --reinstall ca-certificates
+
+echo "* * * * * php /usr/share/nginx/artisan schedule:run 1>> /dev/null 2>&1" >> /var/spool/cron/crontabs/root
+crontab /var/spool/cron/crontabs/root
+service cron restart
+
+apt-get update
 
 echo "Tudo pronto!!!"
