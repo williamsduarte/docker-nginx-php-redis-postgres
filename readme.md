@@ -67,7 +67,7 @@ Adminstração de Laravel, Nginx, PHP-FPM, Redis e PostgreSQL com Docker.
 6. Para instalar execute o comando abaixo :
 
     ```sh
-    sudo docker-compose up -d && echo "Por favor, aguarde enquanto o serviço é ..." && sleep 5 && docker exec myapp-web /usr/share/nginx/setup.sh
+    sudo docker-compose up -d && echo "Por favor, aguarde enquanto o serviço é ..." && sleep 5 && docker exec myapp-web /usr/local/bin/setup.sh
     ```
 
 7. Para acessar o Laravel :
